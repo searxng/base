@@ -3,7 +3,5 @@
 "aqua:mvdan/sh" = "latest"
 
 [env]
-# FIXME: podman 4.x issue? Readd `--omit-history` when fixed
-# "internal error: history lists 1 non-empty layers, but we have 2 layers on disk"
-X_PODMAN_COMMON = "--format=oci --layers=false --squash-all --identity-label=false"
+X_PODMAN_COMMON = "--format=oci --layers=false --squash-all --identity-label=false --omit-history"
 X_PODMAN_MANIFEST_REGISTRY = "localhost"
