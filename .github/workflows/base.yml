@@ -60,7 +60,7 @@ jobs:
         run: echo "date=$(date +'%Y%m%d')" >>$GITHUB_OUTPUT
 
       - name: Setup cache container
-        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        uses: actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
         with:
           # yamllint disable-line rule:line-length
           key: "container-${{ steps.date.outputs.date }}-${{ hashFiles('./Dockerfile') }}"
