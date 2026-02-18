@@ -14,6 +14,6 @@ if [ "$usage_push" = "true" ]; then
 fi
 set -u
 
-mise run build:searxng $passthrough
+mise run build:core $passthrough
 mise run build:searxng-builder $passthrough
-mise run build:space $passthrough
+mise run build:searxng $passthrough

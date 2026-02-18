@@ -3,5 +3,5 @@
 "aqua:mvdan/sh" = "latest"
 
 [env]
-X_PODMAN_COMMON = "--format=oci --layers=false --squash-all --identity-label=false"
+X_PODMAN_COMMON = "--format=oci --squash-all --identity-label=false"
 X_PODMAN_MANIFEST_REGISTRY = "localhost"

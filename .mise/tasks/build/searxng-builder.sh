@@ -3,7 +3,7 @@
 set -eu
 
 #MISE alias="b:searxng-builder"
-#MISE description="Build \"searxng/searxng\" builder base image"
+#MISE description="Build \"searxng/searxng\" base image builder"
 
 #USAGE flag "--push" help="Push to registry" default="false"
 #USAGE arg "<target>" default="linux/amd64,linux/arm64,linux/arm/v7"

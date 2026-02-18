@@ -58,10 +58,10 @@ jobs:
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
           # yamllint disable-line rule:line-length
-          key: "container-${{ steps.date.outputs.date }}-${{ hashFiles('./Dockerfile') }}"
+          key: "container-${{ hashFiles('./Dockerfile') }}-${{ steps.date.outputs.date }}"
+          # restore only the same hash
           restore-keys: |
-            "container-${{ steps.date.outputs.date }}-"
-            "container-"
+            container-${{ hashFiles('./Dockerfile') }}-
           path: "/var/tmp/buildah-cache-*/*"
 
       - name: Setup QEMU
@@ -74,5 +74,5 @@ jobs:
           username: "${{ github.repository_owner }}"
           password: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Build
+      - name: Build (push)
         run: mise run build --push

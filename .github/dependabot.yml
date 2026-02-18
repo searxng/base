@@ -1,11 +1,14 @@
-# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
+---
 version: 2
 updates:
   - package-ecosystem: "github-actions"
+    assignees:
+      - "inetol"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "friday"
     target-branch: "main"
     commit-message:
-      prefix: "[upd] github-actions:"
+      prefix: "[upd] ci:"
