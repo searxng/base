@@ -195,7 +195,11 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" \
     SSL_CERT_DIR="/etc/ssl/certs" \
     SSL_CERT_FILE="/etc/ssl/certs/ca-certificates.crt" \
     HISTFILE="/dev/null" \
+    __SEARXNG_CONFIG_PATH="/etc/searxng" \
+    # deprecated naming
     CONFIG_PATH="/etc/searxng" \
+    __SEARXNG_DATA_PATH="/var/cache/searxng" \
+    # deprecated naming
     DATA_PATH="/var/cache/searxng"
 
 WORKDIR /usr/local/searxng/

@@ -32,7 +32,7 @@ jobs:
 
       - name: Setup podman
         env:
-          PODMAN_VERSION: "v5.7.1"
+          PODMAN_VERSION: "v5.8.1"
         run: |
           sudo apt-get purge -y podman runc crun conmon
 
