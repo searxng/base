@@ -4,7 +4,7 @@ ARG TARGETPLATFORM
 ARG XBPS_MIRROR=https://repo-fastly.voidlinux.org
 
 ARG CORE_PACKAGES="xbps base-files busybox ca-certificates"
-ARG SEARXNG_BUILDER_PACKAGES="xbps base-files busybox ca-certificates gcc tzdata python3-devel wget uv brotli"
+ARG SEARXNG_BUILDER_PACKAGES="xbps base-files busybox ca-certificates gcc tzdata python3-devel wget uv brotli make bash git graphviz"
 ARG SEARXNG_PACKAGES="xbps base-files busybox ca-certificates libstdc++ tzdata python3 wget"
 
 ############
@@ -196,11 +196,7 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" \
     SSL_CERT_FILE="/etc/ssl/certs/ca-certificates.crt" \
     HISTFILE="/dev/null" \
     __SEARXNG_CONFIG_PATH="/etc/searxng" \
-    # deprecated naming
-    CONFIG_PATH="/etc/searxng" \
-    __SEARXNG_DATA_PATH="/var/cache/searxng" \
-    # deprecated naming
-    DATA_PATH="/var/cache/searxng"
+    __SEARXNG_DATA_PATH="/var/cache/searxng"
 
 WORKDIR /usr/local/searxng/
 ENTRYPOINT ["/usr/bin/sh"]
