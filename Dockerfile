@@ -4,7 +4,7 @@ ARG TARGETPLATFORM
 ARG XBPS_MIRROR=https://repo-fastly.voidlinux.org
 
 ARG CORE_PACKAGES="xbps base-files busybox ca-certificates"
-ARG SEARXNG_BUILDER_PACKAGES="xbps base-files busybox ca-certificates gcc tzdata python3-devel wget uv brotli make bash git graphviz"
+ARG SEARXNG_BUILDER_PACKAGES="xbps base-files busybox ca-certificates gcc tzdata python3-devel wget uv brotli make bash git graphviz tar"
 ARG SEARXNG_PACKAGES="xbps base-files busybox ca-certificates libstdc++ tzdata python3 wget"
 
 ############
@@ -93,7 +93,7 @@ COPY --from=rootfs-core /target/ /
 
 RUN set -eu; \
     for app in $(/usr/bin/busybox --list); do \
-    [ ! -f "/usr/bin/$app" ] && /usr/bin/busybox ln -sf busybox "/usr/bin/$app"; \
+    [ ! -f "/usr/bin/$app" ] && /usr/bin/busybox ln -s busybox "/usr/bin/$app"; \
     done; \
     install -dm1777 /tmp/; \
     xbps-reconfigure -fa; \
@@ -134,7 +134,7 @@ COPY --from=rootfs-searxng-builder /target/ /
 
 RUN set -eu; \
     for app in $(/usr/bin/busybox --list); do \
-    [ ! -f "/usr/bin/$app" ] && /usr/bin/busybox ln -sf busybox "/usr/bin/$app"; \
+    [ ! -f "/usr/bin/$app" ] && /usr/bin/busybox ln -s busybox "/usr/bin/$app"; \
     done; \
     install -dm1777 /tmp/; \
     xbps-reconfigure -fa; \
@@ -168,7 +168,7 @@ COPY --from=rootfs-searxng /target/ /
 
 RUN set -eu; \
     for app in $(/usr/bin/busybox --list); do \
-    [ ! -f "/usr/bin/$app" ] && /usr/bin/busybox ln -sf busybox "/usr/bin/$app"; \
+    [ ! -f "/usr/bin/$app" ] && /usr/bin/busybox ln -s busybox "/usr/bin/$app"; \
     done; \
     install -dm1777 /tmp/; \
     xbps-reconfigure -fa; \
