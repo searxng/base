@@ -21,6 +21,6 @@ The tools required for a developer environment are provided via
 `mise.toml`_.
 
 .. _mise.toml:
-   https://github.com/searxng/base/blob/master/mise.toml
+   https://codeberg.org/searxng/base/src/branch/main/mise.toml
 .. _mise en place:
    https://mise.jdx.dev/getting-started.html

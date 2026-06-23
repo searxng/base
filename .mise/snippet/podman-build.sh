@@ -2,8 +2,8 @@
 # shellcheck shell=dash
 
 set +u
-if [ "$GITHUB_ACTIONS" = "true" ]; then
-	X_PODMAN_MANIFEST_REGISTRY="ghcr.io"
+if [ "$FORGEJO_ACTIONS" = "true" ]; then
+	X_PODMAN_MANIFEST_REGISTRY="docker.io"
 fi
 set -u
 
