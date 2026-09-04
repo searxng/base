@@ -3,7 +3,7 @@ ARG TARGETPLATFORM
 
 ARG XBPS_MIRROR=https://repo-fastly.voidlinux.org
 
-ARG SEARXNG_BUILDER_PACKAGES="xbps base-files busybox ca-certificates gcc tzdata brotli wget python3-devel uv"
+ARG SEARXNG_BUILDER_PACKAGES="xbps base-files busybox ca-certificates gcc tzdata brotli wget python3-devel uv libffi-devel"
 
 ARG CORE_PACKAGES="xbps base-files busybox ca-certificates"
 ARG SEARXNG_PACKAGES="libstdc++ tzdata python3 wget"
